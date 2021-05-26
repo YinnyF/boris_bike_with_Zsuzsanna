@@ -35,6 +35,10 @@ gem install rspec
 * Use Objects within other Objets
 * Use RSpec 'predicate' syntax
 * Pass a feature test
+* Write RSpec tests that require arguments
+* Pass an instance as an argument
+* Set an attribute on an instantiated Object using an `@` instance variable
+* Use `attr_reader` to read an attribute on an instantiated Object
 
 
 
@@ -46,6 +50,7 @@ Let's go back several years, to the days when there were no Boris Bikes. Imagine
 To help structure your work, here are 22 challenges. They all build on one another. They require you to research things, to get stuck, and to find your own solutions. This is on purpose. A developer is a 'knowledge worker' - someone who will spend the majority of their time researching and learning how to solve problems. It'll suck for a bit, but with practice, you will get faster: and there's no better feeling than finding the answer to a problem that's been standing in your way for hours.
 
 # User Stories
+
 ```
 As a person,
 So that I can use a bike,
@@ -56,12 +61,22 @@ So that I can use a good bike,
 I'd like to see if a bike is working
 ```
 
+```
+As a member of the public
+So I can return bikes I've hired
+I want to dock my bike at the docking station
+
+As a member of the public
+So I can decide whether to use the docking station
+I want to see a bike that has been docked
+```
+
 # Functional Representation of User Stories
 Objects  | Messages
 ------------- | -------------
 Person |
 Bike  | working?
-DockingStation | release_bike
+DockingStation | release_bike, dock(bike)
 
 
 # How To Use
@@ -74,7 +89,7 @@ rspec
 In irb:
 ```irb
 require './lib/bike.rb'
-require './lib/docking_station.rb
+require './lib/docking_station.rb'
 ```
 
 
