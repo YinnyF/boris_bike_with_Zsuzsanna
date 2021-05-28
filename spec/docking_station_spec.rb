@@ -22,13 +22,19 @@ describe DockingStation do
     bike = Bike.new
     subject.dock(bike)
 
-    expect(subject.bike).to eq [bike]
+    expect(subject.bike).to eq bike
   end
 
   it 'raises an error if there are no bikes in the station' do
-    expect{subject.release_bike}.to raise_error('No more bikes')
+    expect { subject.release_bike } .to raise_error('No more bikes')
   end  
 
+  it 'to raise an error if you try to dock a bike when the dock is full' do
+    bike = Bike.new
+    subject.dock(bike)
+    bike2 = Bike.new
+    expect { subject.dock(bike2) } .to raise_error('Dock is full')
+  end
 
 
 end
