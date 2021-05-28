@@ -39,6 +39,10 @@ gem install rspec
 * Pass an instance as an argument
 * Set an attribute on an instantiated Object using an `@` instance variable
 * Use `attr_reader` to read an attribute on an instantiated Object
+* Write RSpec tests that expect errors
+* Use fail or raise to raise an error
+* Use a 'guard condition'
+* Set an initial attribute value using initialize
 
 
 
